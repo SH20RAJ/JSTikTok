@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSTikTok</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/gh/DirecJS/DirecJS@latest/DirecJS.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <video id="vid" controls autoplay>
+            <source src="" type="video/mp4">
+        </video>
+    </div>
+    <script>
+        var json = get.json('https://raw.githubusercontent.com/Toolade/JSTikTok/main/videos.json')
+
+        //for(i=0;i<json.length;i++) {
+        //    title += "<video src='"+json[i].url + "'></video><br>";
+        //}
+        let video = document.querySelector('video');
+        const random = Math.floor(Math.random() * json.length);
+        console.log(random)
+        //
+        let vid = json[random].url;
+        video.src = vid;
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</body>
+
+</html>
