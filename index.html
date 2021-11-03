@@ -7,39 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSTikTok</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/gh/CDNSFree2/DirecJS@latest/DirecJS.min.js"></script>
 </head>
 
 <body>
-    <div id="container">
-        <video id="vid" controls autoplay>
-            <source src="" type="video/mp4">
+    <div class="container">
+        <div id="progress"><div class="completed"></div></div>
+        <video id="vid" loop onclick="playpause()" >
+            <source src="videos/1.mp4" type="video/mp4">
         </video>
+        <div class="mat">
+            <div id="title">Here is the Title -> </div>
+        </div>
+        <div class="controls">
+            <span class="play" onclick="playpause()" >  </span>
+            <span class="prev" onclick="back()"> < </span>
+            <span class="next" onclick="initialise()"> > </span>
+        </div>
     </div>
-    <script>
-        var json = get.json('videos.json')
+    <script src="main.js"></script>
 
-        //for(i=0;i<json.length;i++) {
-        //    title += "<video src='"+json[i].url + "'></video><br>";
-        //}
-        let video = document.querySelector('video');
-        const random = Math.floor(Math.random() * json.length);
-        console.log(random)
-        //
-        let vid = json[random].url;
-        video.src = vid;
-    </script>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        video {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
 </body>
 
 </html>
